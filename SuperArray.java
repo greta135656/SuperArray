@@ -7,7 +7,7 @@ public class SuperArray {
     //constructor
     public SuperArray(){
     size = 0;
-    data = (String[]) new Object[10];
+    data = new String[10];
     }
 
     // returns the number of elements in this list
@@ -36,9 +36,9 @@ public class SuperArray {
   		if (index >= size || index < 0) {
   			return null;
   		} else {
-  			String original = data[index];
+  			String old = data[index];
   			data[index] = element;
-  			return original;
+  			return old;
   		}
   	}
   	
@@ -52,13 +52,11 @@ public class SuperArray {
   data = data2;
 }
 
-//
-	public boolean add(String element) {
+//add
+	public void add(String element) {
 		if (size == data.length)
-			{String.resize();
-      return false;}
+			resize();
 
-		{data[size] = element;
+		data[size] = element;
 		size++;
-    return true;
-	} }
+	}}
