@@ -12,9 +12,7 @@ public class SuperArray {
 
     // returns the number of elements in this list
     public int size() {
-    for (int i = 0; i < data.length; i++)
-    {
-    size++;}
+ 
     return size;
     }
     
@@ -52,11 +50,9 @@ public class SuperArray {
   data = data2;
 }
 
-//
 	public boolean add(String element) {
 		if (size == data.length)
-			{resize();
-      return false;}
+			{resize(); }
 
 		{data[size] = element;
 		size++;
