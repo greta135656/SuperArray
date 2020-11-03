@@ -6,40 +6,59 @@ public class SuperArray {
 
     //constructor
     public SuperArray(){
-    data = new String[0];
+    size = 0;
+    data = (String[]) new Object[10];
     }
 
-    // method 1
+    // returns the number of elements in this list
     public int size() {
-    int size = 0;
-    for (int i = 0; i < data.length; i++){
+    for (int i = 0; i < data.length; i++)
+    {
     size++;}
     return size;
     }
     
-    // Appends the specified element to the end of this list. 
-    public void add(String element){
-    data = data + element;
-    }
+
 
     // Returns the element at the specified position in this list.
-    public String get(int index){
-    return data.charAt(index);
-    }
+    public String get(int index) {
+  		if (index >= size || index < 0) {
+  			return null;
+  		} else {
+  			return data[index];}
+  	}
 
     // Replaces the element at the specified position in this list 
     // with the specified element. 
     // Return the value you replaced. 
     
-    public String set(int index, String element)
-    { data = data.substring(0, index) + element + data.substring(index+1, data.string());
-      return data; }
-
-    // resize
+    public String set(int index, String element) {
+  		if (index >= size || index < 0) {
+  			return null;
+  		} else {
+  			String original = data[index];
+  			data[index] = element;
+  			return original;
+  		}
+  	}
+  	
+  	
+  	    // resize
     private void resize(){
   String[] data2 = new String[data.length + 1];
   for(int i = 0; i < data.length; i++){
     data2[i] = data[i];
   }
   data = data2;
-}}
+}
+
+//
+	public boolean add(String element) {
+		if (size == data.length)
+			{String.resize();
+      return false;}
+
+		{data[size] = element;
+		size++;
+    return true;
+	} }
