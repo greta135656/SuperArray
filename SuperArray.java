@@ -57,4 +57,13 @@ public class SuperArray {
 		{data[size] = element;
 		size++;
     return true;
-	} }}
+	} }
+
+public boolean isEmpty()
+{if (size == 0)
+return true;
+return false;}
+
+public void clear()
+{size = 0;}
+}
