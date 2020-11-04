@@ -3,11 +3,13 @@ public class SuperArray {
     // Instance Variables
     private String [] data;
     private int size; //The current size
+    private int capacity;
 
     //constructor
-    public SuperArray(){
+    public SuperArray(int initialCapacity){
     size = 0;
     data = new String [10];
+    initialCapacity = capacity;
     }
 
     // returns the number of elements in this list
@@ -66,4 +68,45 @@ return false;}
 
 public void clear()
 {size = 0;}
+}
+
+
+public String toString() {
+ String result = "["
+ {for (int i = 0; i < size; i++)
+     result = += data[i];
+     if (size > 1 && i < size -1){
+     result += ", ";
+     }
+     result += "]"
+     return result;
+ 
+}}
+
+public boolean contains(String s)
+String element0 = s;
+for (int i=0; i < data.length -1; i++) {
+if (data[i] == s) {
+return true;
+}
+return false;
+}
+
+public String remove(int index){
+for (int i = index; i < size-1; i++)
+{ data[i] = data[i + 1];
+size--;}
+return data[index];
+}
+
+public void add(int index, String element){
+if (index >= size)  {
+add (element);
+if (size == data.length)
+resize();
+for (int i = size; i>index; i--)
+data[index] = element;
+data[i] = data[i-1];
+
+}
 }
