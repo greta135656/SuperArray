@@ -94,13 +94,15 @@ public String toString() {
 
 
 public String remove(int index){
+
+String result = data[index];{
 if (size>0) 
 for (int i = index; i < size-1; i++)
 { data[i] = data[i+1 ];}
-        data[size - 1] = null;
+ 
 	size--;
-return data[index];
-}
+return result;
+}}
 
 public void add(int index, String element){
 if (index >= size)  
