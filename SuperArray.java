@@ -1,9 +1,9 @@
 public class SuperArray {
 
     // Instance Variables
-    private String [] data;
-    private int size; //The current size
-    private int capacity;
+    public String [] data;
+    public int size; //The current size
+    public int capacity;
 
     //constructor
     public SuperArray(int initialCapacity){
@@ -90,14 +90,19 @@ public String toString() {
  
 }
 
-public boolean contains(String s){
-String element0 = s;
-for (int i=0; i < data.length -1; i++) {
-if (data[i] == s) {
-return true;
+
+public boolean contains(String s)
+{
+    String element0 = s;
+    for (int i=0; i < data.length -1; i++)
+    {
+        if (data[i] == s) 
+        {
+            return true;
+        }
+    }
+            return false;
 }
-return false;
-}}
 
 public String remove(int index){
 for (int i = index; i < size-1; i++)
@@ -111,18 +116,25 @@ if (index >= size)  {
 add (element);
 if (size == data.length)
 resize();
-for (int i = size; i>index; i--)
+for (int i = size; i>index; i--){
 data[index] = element;
 data[i] = data[i-1];
 
 }
-}
+}}
 
 public String[] toArray(){
-String[] copy = new copy[size];
+String[] copy = new String[size];
 for (int i = 0; i <= size; i++){
 copy[i] = data[i];
 }
 return copy;
-}	
+}
+
+ public int indexOf(String s) {
+for (int i = 0; i < size-1; i++)
+ {if (data[i] == s)
+ return i;}
+ return -1;}
+	
 }
