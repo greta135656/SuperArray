@@ -91,37 +91,30 @@ public String toString() {
 }
 
 
-public boolean contains(String s)
-{
-    String element0 = s;
-    for (int i=0; i < data.length -1; i++)
-    {
-        if (data[i] == s) 
-        {
-            return true;
-        }
-    }
-            return false;
-}
+
 
 public String remove(int index){
-for (int i = index; i < size-1; i++)
+for (int i = index; i < size; i++)
 { data[i] = data[i + 1];}
 	size--;
 return data[index];
 }
 
 public void add(int index, String element){
-if (index >= size)  {
+if (index >= size)  
 add (element);
-if (size == data.length)
+else
+{if (size == data.length)
 resize();
-for (int i = size; i>index; i--){
-data[index] = element;
-data[i] = data[i-1];
+for (int i = size - 1; i>=index; i--)
+{
+
+     data[i+1] = data[i];
 }
+        data[index] = element;
 	size ++;
-}}
+}
+}
 
 public String[] toArray(){
 String[] copy = new String[size];
@@ -129,6 +122,20 @@ for (int i = 0; i < size; i++){
 copy[i] = data[i];
 }
 return copy;
+}
+
+public boolean contains(String s)
+{if(size == 0)
+    return false;
+
+    for (int i=0; i < size(); i++)
+    {
+        if (data[i].equals(s)) 
+        {
+            return true;
+        }
+    }
+            return false;
 }
 
  public int indexOf(String s) {
