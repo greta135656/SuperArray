@@ -85,7 +85,7 @@ public String toString() {
   {if (size > 1 && i < size -1){
      result += ", ";
      }}}
-     result += "]"
+     result += "]";
      return result;
  
 }
