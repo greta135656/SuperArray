@@ -119,7 +119,7 @@ data[i] = data[i-1];
 }
 
 public String[] toArray(){
-int[] copy = new copy[size];
+String[] copy = new copy[size];
 for (int i = 0; i <= size; i++){
 copy[i] = data[i];
 }
