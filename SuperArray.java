@@ -15,7 +15,7 @@ public class SuperArray {
     //constructor if capacity is not specified 
     public SuperArray(){
     size = 0;
-    capacity = 10
+    capacity = 10;
     data = new String [10];
     }
 
@@ -75,29 +75,29 @@ return false;}
 
 public void clear()
 {size = 0;}
-}
+
 
 
 public String toString() {
- String result = "["
- {for (int i = 0; i < size; i++)
-     result = += data[i];
-     if (size > 1 && i < size -1){
+ String result = "[";
+ for (int i = 0; i < size; i++){
+     result += data[i];
+  {if (size > 1 && i < size -1){
      result += ", ";
-     }
+     }}}
      result += "]"
      return result;
  
-}}
+}
 
-public boolean contains(String s)
+public boolean contains(String s){
 String element0 = s;
 for (int i=0; i < data.length -1; i++) {
 if (data[i] == s) {
 return true;
 }
 return false;
-}
+}}
 
 public String remove(int index){
 for (int i = index; i < size-1; i++)
@@ -116,4 +116,4 @@ data[index] = element;
 data[i] = data[i-1];
 
 }
-}
+}}
