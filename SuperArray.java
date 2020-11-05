@@ -94,8 +94,10 @@ public String toString() {
 
 
 public String remove(int index){
-for (int i = index; i < size; i++)
-{ data[i] = data[i + 1];}
+if (size>0) 
+for (int i = index; i < size-1; i++)
+{ data[i] = data[i+1 ];}
+
 	size--;
 return data[index];
 }
