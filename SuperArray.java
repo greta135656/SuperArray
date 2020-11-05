@@ -106,8 +106,8 @@ public boolean contains(String s)
 
 public String remove(int index){
 for (int i = index; i < size-1; i++)
-{ data[i] = data[i + 1];
-size--;}
+{ data[i] = data[i + 1];}
+	size--;
 return data[index];
 }
 
@@ -119,8 +119,8 @@ resize();
 for (int i = size; i>index; i--){
 data[index] = element;
 data[i] = data[i-1];
-size ++;
 }
+	size ++;
 }}
 
 public String[] toArray(){
