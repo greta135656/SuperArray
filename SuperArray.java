@@ -119,22 +119,22 @@ resize();
 for (int i = size; i>index; i--){
 data[index] = element;
 data[i] = data[i-1];
-
+size ++;
 }
 }}
 
 public String[] toArray(){
 String[] copy = new String[size];
-for (int i = 0; i <= size; i++){
+for (int i = 0; i < size; i++){
 copy[i] = data[i];
 }
 return copy;
 }
 
  public int indexOf(String s) {
-for (int i = 0; i < size-1; i++)
+{for (int i = 0; i < size; i++)
  {if (data[i] == s)
- return i;}
+ return i;}}
  return -1;}
 	
 }
