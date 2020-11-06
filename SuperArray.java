@@ -1,9 +1,9 @@
 public class SuperArray {
 
     // Instance Variables
-    public String [] data;
-    public int size; //The current size
-    public int capacity;
+    private String [] data;
+    private int size; //The current size
+    private int capacity;
 
     //constructor
     public SuperArray(int initialCapacity){
@@ -95,14 +95,16 @@ public String toString() {
 
 public String remove(int index){
 
-String result = data[index];{
-if (size>0) 
+String result = data[index];
+	if (size>0) 
+	{
 for (int i = index; i < size-1; i++)
 { data[i] = data[i+1 ];}
  
 	size--;
 return result;
-}}
+}
+else return "Index out of bounds";}
 
 public void add(int index, String element){
 if (index >= size)  
