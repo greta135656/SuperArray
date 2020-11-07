@@ -1,9 +1,9 @@
 public class SuperArray {
 
     // Instance Variables
-    private String [] data;
-    private int size; //The current size
-    private int capacity;
+    public String [] data;
+    public int size; //The current size
+    public int capacity;
 
     //constructor
     public SuperArray(int initialCapacity){
@@ -149,5 +149,28 @@ public boolean contains(String s)
  {if (data[i].equals(s))
  return i;}
  return -1;}
+
+public boolean equals(SuperArray other){ 
+int length1 = size;
+int length2 = other.size();
+if (length1 != length2)
+return false;
+
+for (int i = 0; i < length1; i++)
+           if (!data[i].equals(other.get(i)))
+               return false;
+               return true;
+}
+
+public int lastIndexOf(String value){ 
+for (int i = size-1; i >= 0; i--)
+{if (data[i].equals(value))
+return i;}
+return -1;}
 	
+
+
+
+
+
 }
