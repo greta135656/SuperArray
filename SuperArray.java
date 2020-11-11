@@ -7,9 +7,14 @@ public class SuperArray {
 
     //constructor
     public SuperArray(int initialCapacity){
-    size = 0;
+    
+    if (initialCapacity < 0) {
+    throw new IllegalArgumentException("capacity " + initialCapacity
+        + " cannot be negative");
+}
     capacity = initialCapacity;
     data = new String [capacity];
+    size = 0;
     }
 
     //constructor if capacity is not specified 
@@ -30,24 +35,28 @@ public class SuperArray {
     // Returns the element at the specified position in this list.
     public String get(int index) {
   		if (index >= size || index < 0) {
-  			return null;
-  		} else {
+       
+      throw new IndexOutOfBoundsException("index " + index
+          + "is out of bounds");
+  }
+  		
   			return data[index];}
-  	}
+  	
 
     // Replaces the element at the specified position in this list 
     // with the specified element. 
     // Return the value you replaced. 
     
     public String set(int index, String element) {
-  		if (index >= size || index < 0) {
-  			return null;
-  		} else {
+    if (index >= size || index < 0) {
+     
+    throw new IndexOutOfBoundsException("index " + index
+        + "is out of bounds");
+}  
   			String original = data[index];
   			data[index] = element;
   			return original;
   		}
-  	}
   	
   	
   	    // resize
@@ -60,6 +69,7 @@ public class SuperArray {
 }
 
 	public boolean add(String element) {
+  
 		if (size == data.length)
 			{resize(); }
 
@@ -94,32 +104,37 @@ public String toString() {
 
 
 public String remove(int index){
-
+if (index >= size || index < 0) {
+ 
+throw new IndexOutOfBoundsException("index " + index
+    + "is out of bounds");
+} 
+if (data[index] == null) {
+return null;
+}
 String result = data[index];
-	if (size>0) 
 	{
 for (int i = index; i < size-1; i++)
 { data[i] = data[i+1 ];}
  
 	size--;
-return result;
-}
-else return "Index out of bounds";}
+return result;}}
 
 public void add(int index, String element){
-if (index >= size)  
-add (element);
-else
-{if (size == data.length)
-resize();
+if (index >= size || index < 0) {
+throw new IndexOutOfBoundsException("index " + index
+    + "is out of bounds");
+} 
+
+if (size == data.length)
+{resize();}
+
 for (int i = size - 1; i>=index; i--)
 {
-
      data[i+1] = data[i];
 }
         data[index] = element;
 	size ++;
-}
 }
 
 public String[] toArray(){
