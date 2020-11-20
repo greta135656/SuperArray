@@ -121,7 +121,7 @@ for (int i = index; i < size-1; i++)
 return result;}}
 
 public void add(int index, String element){
-if (index >= size || index < 0) {
+if (index > size || index < 0) {
 throw new IndexOutOfBoundsException("index " + index
     + " is out of bounds");
 } 
