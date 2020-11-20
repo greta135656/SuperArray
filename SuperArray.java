@@ -1,9 +1,9 @@
 public class SuperArray {
 
     // Instance Variables
-    public String [] data;
-    public int size; //The current size
-    public int capacity;
+    private String [] data;
+    private int size; //The current size
+    private int capacity;
 
     //constructor
     public SuperArray(int initialCapacity){
